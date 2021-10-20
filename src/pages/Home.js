@@ -9,17 +9,19 @@ const Home = () => {
         setInput(ev.target.value);
     };
 
-    const onKeyDown = (ev) => {
-
-    }
-
     const onSearch = () => {
 
         fetch(`https://api.tvmaze.com/singlesearch/shows?q=${input}`)
         .then(resp => resp.json())
         .then(result => {
-            console.log(result)
+            console.log("result", result)
         })
+    };
+
+    const onKeyDown = (ev) => {
+        if (ev.keyCode === 13) {
+            onSearch()
+        }
     };
 
     return (
