@@ -6,12 +6,7 @@ import Starred from './pages/Starred';
 
 function App() {
   return(
-
-  <div>
-
-    <Navs />
       <Switch>
-    
         <Route exact path="/">
         <Home />
         </Route>
@@ -27,9 +22,8 @@ function App() {
         <Route>
         You found yourself a 404 babe
         </Route>
-      
-        </Switch>
-    </div>
+      </Switch>
+  
   );
 }
 
