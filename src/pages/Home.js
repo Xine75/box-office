@@ -49,7 +49,6 @@ const Home = () => {
         }
         return null;
     }
-
     return (
         <MainPageLayout>
             <input type="text" 
@@ -78,13 +77,9 @@ const Home = () => {
                     onChange={onRadioChange} />
                 </label>
             </div>
-
-
             <button type="button" onClick={onSearch}>Search</button>
             {renderResults()}
-
         </MainPageLayout>
     )
 }
-
 export default Home
