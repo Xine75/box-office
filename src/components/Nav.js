@@ -4,7 +4,7 @@ import{Link} from 'react-router-dom';
 const LINKS = [
     { to: "/", text: "Home" },
     { to: "/starred", text: "Starred"},
-    { to: "/actors", text: "Actors"}
+    // { to: "/actors", text: "Actors"}
 ]
 
 const Nav = () => {
