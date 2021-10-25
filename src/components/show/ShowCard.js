@@ -21,7 +21,7 @@ const summaryAsText = summary
 
       <div className="btns">
         <Link to={`/show/${id}`}>Read more</Link>
-        <button type="button" onClick={onStarClick}>
+        <button type="button" onClick={() => onStarClick(id, isStarred)}>
           <Star active={isStarred}/>
         </button>
       </div>
