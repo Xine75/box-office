@@ -23,9 +23,6 @@ const ShowGrid = ({data}) => {
                 }
 
             }
-
-
-
             return (
                 <ShowCard 
                 key={show.id} 
