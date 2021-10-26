@@ -6,12 +6,14 @@ import { useShows } from '../misc/custom-hooks'
 
 const Starred = () => {
 
+    //useShows custom hook uses a custome useReducer to set multiple states for starred page
     const [starred] = useShows();
 
     const [shows, setShows] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    //useEffect with conditions to wait for starred shows to be fetched and return promises when ready
     useEffect(() => {
         if(starred && starred.length > 0) {
 

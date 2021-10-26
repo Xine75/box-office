@@ -12,6 +12,7 @@ const renderResults = (results) => {
     if(results && results.length === 0){
         return <div>No results</div>;
     }
+    //ternary to determin of user searched for show? or not, then renders show or actor grid accordingly
     if(results && results.length > 0){
         return results[0].show ? (
             <ShowGrid data={results} />
@@ -24,11 +25,15 @@ const renderResults = (results) => {
 
 const Home = () => {
 
+    //useLastQuery is a custom hook (imported from misc/custom-hooks) that allows us to use sessionStorage to access the user's last query to populate the search field
     const [input, setInput] = useLastQuery();
     const [results, setResults] = useState(null);
+    //default searchOption state is shows
     const [searchOption, setSearchOption] = useState("shows");
+    //this is true of searchOption is set to shows
     const isShowsSearch = searchOption === "shows";
 
+    //useCallback is a React hook that creates one copy of a function to prevent unnecessary re-rendering
     const onInputChange = useCallback(ev => {
         setInput(ev.target.value);
     }, [setInput]);
@@ -39,6 +44,7 @@ const Home = () => {
             setResults(result)
         })
     };
+    //13 is the keyCode for Return, so user can hit "return" key to submit search
     const onKeyDown = (ev) => {
         if (ev.keyCode === 13) {
             onSearch()

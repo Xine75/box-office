@@ -29,12 +29,7 @@ function App() {
         </Route>
 
         <Route exact path="/show/:id">
-
           <Show />
-        </Route>
-
-        <Route exact path="/actors">
-        Actors
         </Route>
 
         <Route>

@@ -29,7 +29,7 @@ const [state, dispatch] = useReducer(reducer, initialState, (initial) => {
 export function useShows(key="shows") {
     return usePersistedReducer(showsReducer, [], key);
 }
-
+//this custom hook allows us to populate the search text bar with the input from the last query
 export function useLastQuery(key ="lastQuery") {
     const [input, setInput] = useState(() => {
         const persisted = sessionStorage.getItem(key);
@@ -71,7 +71,7 @@ export function useShow(showId){
             error: null
         });
 
-//useReducer to the place of these useStates
+//useReducer in place of these useStates
 // const [show, setShow] = useState(null);
 // const [isLoading, setIsLoading] = useState(true);
 // const [error, setError] = useState(null);

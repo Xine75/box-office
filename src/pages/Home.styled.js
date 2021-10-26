@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//styled allows a version of in-line styling by defining values here which are then imported to the component
 export const SearchInput = styled.input`
 display: block;
 font-family: 'Roboto', sans-serif;

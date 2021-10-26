@@ -11,8 +11,10 @@ import { useShow } from "../misc/custom-hooks"
 
 const Show = () => {
 
+    //uses object destructuring to grab the id off what is returned by useParams (a show object)
 const {id} = useParams();
 
+//useShow is a custom hook that uses useReducer to set several states for show (show, isLoading, and error)
 const { show, isLoading, error }  = useShow(id)
 
     if(isLoading){
@@ -22,6 +24,7 @@ const { show, isLoading, error }  = useShow(id)
         <div>Error occurred: {error}</div>
     }
 
+    //these key-value pairs come from the show object. Again, styled is used to provide styling for these elements
     return (
         <ShowPageWrapper>
             <ShowMainData image={show.image} name={show.name} rating={show.rating} summary={show.summary} tags={show.genres} />

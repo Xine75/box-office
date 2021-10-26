@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import styled from "styled-components";
 
+//styling for CustomRadio component
 const RadioWrapper = styled.label`
   display: block;
   position: relative;
@@ -52,7 +53,7 @@ const RadioWrapper = styled.label`
     background: ${({ theme }) => theme.mainColors.blue};
   }
 `;
-
+//using the ...rest operator to grab key-value pairs from Home.js radio component
 const CustomRadio = ({ label, ...restProps }) => {
     return (
       <RadioWrapper htmlFor={restProps.id}>
